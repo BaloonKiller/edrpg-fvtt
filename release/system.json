@@ -1,0 +1,49 @@
+{
+  "id": "edrpg",
+  "type": "system",
+  "title": "Elite: Dangerous Role Playing Game",
+  "description": "A space RPG set in the Elite: Dangerous universe.",
+  "version": "0.0.0",
+  "authors": [
+    {
+      "name": "Bruno Marques (ElSaico)",
+      "url": "https://github.com/ElSaico",
+      "discord": "elsaico"
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": 11.315
+  },
+  "esmodules": [
+    "index.js"
+  ],
+  "styles": [
+    "style.css"
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": ["json"],
+      "paths": ["lang"]
+    }
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "socket": false,
+  "url": "https://github.com/BaloonKiller/edrpg-fvtt",
+  "readme": "https://github.com/BaloonKiller/edrpg-fvtt/blob/main/README.md",
+  "bugs": "https://github.com/BaloonKiller/edrpg-fvtt/issues",
+  "changelog": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/",
+  "manifest": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/download/system.json",
+  "download": "https://github.com/BaloonKiller/edrpg-fvtt/releases/download/0.0.0/system.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}
