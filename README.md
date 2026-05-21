@@ -8,10 +8,10 @@ Installation
 
 Install this package from Foundry's **Game Systems** tab, not from **Worlds**.
 
-Development manifest URL:
+Release manifest URL:
 
 ```text
-https://raw.githubusercontent.com/BaloonKiller/edrpg-fvtt/refs/heads/main/system.json
+https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/download/system.json
 ```
 
-For published releases, update `system.json` so `download` points to a release asset named `system.zip`.
+Create a GitHub release to publish `system.json` and `system.zip` assets through the release workflow.
