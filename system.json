@@ -1,5 +1,6 @@
 {
   "id": "edrpg",
+  "type": "system",
   "title": "Elite: Dangerous Role Playing Game",
   "description": "A space RPG set in the Elite: Dangerous universe.",
   "version": "0.0.0",
@@ -37,7 +38,7 @@
   "gridUnits": "m",
   "socket": false,
   "url": "https://github.com/BaloonKiller/edrpg-fvtt",
-  "readme": "https://github.com/BaloonKiller/edrpg-fvtt/blob/master/README.md",
+  "readme": "https://github.com/BaloonKiller/edrpg-fvtt/blob/main/README.md",
   "bugs": "https://github.com/BaloonKiller/edrpg-fvtt/issues",
   "changelog": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/",
   "manifest": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/download/system.json",
