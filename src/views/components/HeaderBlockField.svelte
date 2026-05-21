@@ -1,5 +1,6 @@
 <script>
    import { localize } from "@typhonjs-fvtt/runtime/svelte/helper";
+   import { safeAccess } from "#runtime/util/object";
    import { bindDocument } from "../utils.js";
 
    export let document;
@@ -10,6 +11,8 @@
    export let borderColor = "border";
    export let titleColor;
    export let contentColor;
+
+   $: value = safeAccess($document.system, field);
 </script>
 
 <label>
@@ -23,7 +26,7 @@
       <input
          type="text"
          readonly
-         value={$document.system[field]}
+         {value}
          class="bg-gradient-to-r from-{contentColor.start} to-{contentColor.end} border-0 h-12 text-center
                 clip-path-header-block-{direction}-content"
       />

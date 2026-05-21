@@ -8,6 +8,7 @@ export default {
       { pattern: /clip-path-header-block-.*/ },
       { pattern: /(from|to)-.*-(begin|end|notes)/ },
       "border-karma-table",
+      "text-left",
       "text-right",
    ],
 

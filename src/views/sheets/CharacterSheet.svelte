@@ -83,11 +83,26 @@
    </header>
    <section id="tab-sections">
       <nav class="tabs bg-gradient-to-r from-white to-table-name border-y my-4 font-bold">
-         <a class="item px-2.5 py-1 w-full" data-tab="main">{localize("EDRPG.sheet.tabs.main")}</a>
-         <a class="item px-2.5 py-1 w-full" data-tab="skills">{localize("EDRPG.sheet.tabs.skills")}</a>
-         <a class="item px-2.5 py-1 w-full" data-tab="backgrounds-karma">{localize("EDRPG.sheet.tabs.bgKarma")}</a>
-         <a class="item px-2.5 py-1 w-full" data-tab="combat">{localize("EDRPG.sheet.tabs.combat")}</a>
-         <a class="item px-2.5 py-1 w-full" data-tab="equipment">{localize("EDRPG.sheet.tabs.equipment")}</a>
+         <a href="#main" class="item px-2.5 py-1 w-full" data-tab="main" on:click|preventDefault>
+            {localize("EDRPG.sheet.tabs.main")}
+         </a>
+         <a href="#skills" class="item px-2.5 py-1 w-full" data-tab="skills" on:click|preventDefault>
+            {localize("EDRPG.sheet.tabs.skills")}
+         </a>
+         <a
+            href="#backgrounds-karma"
+            class="item px-2.5 py-1 w-full"
+            data-tab="backgrounds-karma"
+            on:click|preventDefault
+         >
+            {localize("EDRPG.sheet.tabs.bgKarma")}
+         </a>
+         <a href="#combat" class="item px-2.5 py-1 w-full" data-tab="combat" on:click|preventDefault>
+            {localize("EDRPG.sheet.tabs.combat")}
+         </a>
+         <a href="#equipment" class="item px-2.5 py-1 w-full" data-tab="equipment" on:click|preventDefault>
+            {localize("EDRPG.sheet.tabs.equipment")}
+         </a>
       </nav>
       <section class="tab-content">
          <div class="tab" data-tab="main"></div>

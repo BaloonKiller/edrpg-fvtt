@@ -4,15 +4,15 @@ import mapValues from "lodash/mapValues";
 import EDSkill from "./skill.js";
 import EDMeter from "./meter.js";
 
-export default class CharacterData extends foundry.abstract.TypeDataModel {
+export default class EDCharacterData extends foundry.abstract.TypeDataModel {
    static defineSchema() {
       const fields = foundry.data.fields;
       const requiredInteger = { required: true, nullable: false, integer: true };
 
       return {
-         gender: new fields.StringField(),
-         height: new fields.StringField(),
-         weight: new fields.StringField(),
+         gender: new fields.StringField({ initial: "" }),
+         height: new fields.StringField({ initial: "" }),
+         weight: new fields.StringField({ initial: "" }),
          age: new fields.NumberField({ ...requiredInteger, initial: 0 }),
          rankPoints: new fields.NumberField({ ...requiredInteger, initial: 0 }),
          karma: new fields.SchemaField({
@@ -35,7 +35,7 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
    /**
     * Get the current rank of the character from its rank points.
     *
-    * @returns Rank
+    * @returns {import("../system/game.js").Rank} Current pilot rank.
     */
    get rank() {
       return game.edrpg.ranks.find((rank) => this.rankPoints <= rank.maxRankPoints);
@@ -55,6 +55,12 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
 
    prepareDerivedData() {
       const rank = this.rank;
+      for (const category of Object.values(this.skills)) {
+         for (const skill of Object.values(category)) {
+            skill.min = 10;
+         }
+      }
+
       this.karma.standard.max = rank.karmaPoints;
       this.karma.cyber.max = rank.karmaPoints;
       this.endurance.max = rank.endurance;
@@ -63,11 +69,13 @@ export default class CharacterData extends foundry.abstract.TypeDataModel {
       this.skills.vehicle.shipPiloting.min += 20;
       this.skills.vehicle.shipWeapons.min += 20;
       this.skills.vehicle.systems.min += 10;
-      for (const background of this.parent.itemTypes.background) {
+      for (const background of this.parent?.itemTypes?.background ?? []) {
+         if (!Array.isArray(background.system?.skills)) continue;
          background.system.skills
             .filter((mod) => mod.category && mod.skill)
             .forEach((mod) => {
-               this.skills[mod.category][mod.skill].min += mod.bonus;
+               const skill = this.skills[mod.category]?.[mod.skill];
+               if (skill) skill.min += mod.bonus;
             });
       }
    }

@@ -40,7 +40,7 @@
                      <th
                         class="bg-gradient-to-r from-white to-table-name px-1.5 py-0 text-right font-medium font-condensed"
                      >
-                        <a>{localize(`EDRPG.sheet.skills.${category}.${skill}.name`)}</a>
+                        <span>{localize(`EDRPG.sheet.skills.${category}.${skill}.name`)}</span>
                      </th>
                      <td class="bg-table-cell border-border p-0 w-16 text-center">
                         <input

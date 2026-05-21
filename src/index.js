@@ -11,10 +11,12 @@ import "../styles/index.css";
  *
  * @augments Game
  *
- * @property {EDRPG} edrpg
+ * @property {EDRPG} edrpg Elite: Dangerous RPG system data.
  */
 
 Hooks.once("init", async () => {
+   game.edrpg = EDRPG;
+
    const settings = new TJSGameSettings("edrpg");
    settings.registerAll(EDSettings, false);
 
@@ -54,6 +56,4 @@ Hooks.once("init", async () => {
       makeDefault: true,
    });
    */
-
-   game.edrpg = EDRPG;
 });

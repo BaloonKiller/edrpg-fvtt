@@ -1,16 +1,17 @@
 import { safeAccess } from "#runtime/util/object";
 
 /**
+ * Bind a form element to a Foundry document update path.
  *
- * @param {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} element
+ * @param {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} element Form element to bind.
  *
- * @param options
+ * @param {object} options Binding options.
  *
- * @param {import('#runtime/svelte/store/fvtt/document').TJSDocument} options.document
+ * @param {import('#runtime/svelte/store/fvtt/document').TJSDocument} options.document Target document store.
  *
- * @param {string} options.path
+ * @param {string} options.path Foundry update path.
  *
- * @returns {import('svelte/action').ActionReturn}
+ * @returns {import('svelte/action').ActionReturn} Svelte action lifecycle.
  */
 export function bindDocument(element, { document, path }) {
    const key = element.type === "checkbox" ? "checked" : "value";
@@ -25,8 +26,9 @@ export function bindDocument(element, { document, path }) {
    });
 
    /**
+    * Update the document after the input value changes.
     *
-    * @param {Event} event
+    * @param {Event} event Change event.
     */
    function onChange(event) {
       let newValue = event.target[key];

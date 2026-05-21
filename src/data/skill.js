@@ -19,13 +19,17 @@ export default class EDSkill extends foundry.abstract.DataModel {
    /**
     * Get the current rolling bonus for the skill.
     *
-    * @returns number
+    * @returns {number} Current rolling bonus.
     */
    get bonus() {
       return Math.floor(this.value / 10);
    }
 
    get max() {
-      return this.parent.rank.skillCap;
+      let model = this.parent;
+      while (model && !model.rank) {
+         model = model.parent;
+      }
+      return model?.rank?.skillCap ?? 100;
    }
 }
