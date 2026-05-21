@@ -41,7 +41,7 @@
   "readme": "https://github.com/BaloonKiller/edrpg-fvtt/blob/main/README.md",
   "bugs": "https://github.com/BaloonKiller/edrpg-fvtt/issues",
   "changelog": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/",
-  "manifest": "https://github.com/BaloonKiller/edrpg-fvtt/releases/latest/download/system.json",
+  "manifest": "https://raw.githubusercontent.com/BaloonKiller/edrpg-fvtt/refs/heads/main/system.json",
   "download": "https://github.com/BaloonKiller/edrpg-fvtt/archive/refs/heads/main.zip",
   "protected": false,
   "coreTranslation": false,
