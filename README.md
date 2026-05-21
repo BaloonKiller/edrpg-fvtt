@@ -13,3 +13,5 @@ Development manifest URL:
 ```text
 https://raw.githubusercontent.com/BaloonKiller/edrpg-fvtt/refs/heads/main/system.json
 ```
+
+For published releases, update `system.json` so `download` points to a release asset named `system.zip`.
